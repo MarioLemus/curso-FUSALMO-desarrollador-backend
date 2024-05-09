@@ -6,5 +6,5 @@ const r1 = readline.createInterface({
 })
 
 r1.question("Ingrese una palabra: ", (palabra) => {
-    console.log(`${palabra.toLocaleUpperCase()}`)
+    console.log(`${palabra.toUpperCase()}`)
 })

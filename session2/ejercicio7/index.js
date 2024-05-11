@@ -1,4 +1,4 @@
-const persona = [
+const personas = [
     {
         nombre: "Carlos",
         edad: 75
@@ -17,6 +17,6 @@ const persona = [
     },
 ]
 
-const arrayOrdenado = persona.sort((a, b) => a.edad - b.edad)
+const arrayOrdenado = personas.sort((a, b) => a.edad - b.edad)
 
 console.log(arrayOrdenado)

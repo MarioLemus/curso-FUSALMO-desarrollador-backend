@@ -1,13 +1,12 @@
 function verificarPropsEnObjeto(obj) {
-    const propsEsperadas = ["nombre", "edad", "ciudad"].sort()
+    const propsEsperadas = ["nombre", "direccion", "telefono"].sort()
     const propsActuales = Object.keys(obj).sort()
     return JSON.stringify(propsEsperadas) === JSON.stringify(propsActuales)
 }
 
 const persona = {
-    nombre: "Isaac",
-    ciudxad: "ilobasco", 
-    edad: 25
+    nombre: "Carmel", direccion: "San Salvador", telefono: 25252525
 }
 
-verificarPropsEnObjeto(persona)
+
+console.log(verificarPropsEnObjeto(persona))

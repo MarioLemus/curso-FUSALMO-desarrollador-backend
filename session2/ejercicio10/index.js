@@ -24,5 +24,9 @@ const profesores = [
     },
 ]
 
-const comunidadEducativa = [...estudiantes, ...profesores]
+function combinarObjetos(estudiantes, profesores) {
+    return [...estudiantes, ...profesores]
+}
+
+const comunidadEducativa = combinarObjetos(estudiantes, profesores)
 console.log(comunidadEducativa)

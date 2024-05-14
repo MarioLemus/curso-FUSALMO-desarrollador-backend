@@ -1,0 +1,21 @@
+{
+  "name": "session5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "iniciarMain": "node ./ejercicio2/index.js",
+    "server": "node ./ejercicio4/index.js",
+    "server:dev": "nodemon ./ejercicio5/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "lodash": "^4.17.21",
+    "nodemailer": "^6.9.13",
+    "nodemon": "^3.1.0"
+  }
+}

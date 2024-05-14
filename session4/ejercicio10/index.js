@@ -2,7 +2,7 @@ function tarea1 () {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve('Tarea 1 completada')
-        }, 3000);
+        }, 1000);
     })
 }
 
@@ -10,7 +10,7 @@ function tarea2 () {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve('Tarea 2 completada')
-        }, 3000);
+        }, 500);
     })
 }
 
@@ -18,7 +18,7 @@ function tarea3 () {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve('Tarea 3 completada')
-        }, 3000);
+        }, 2000);
     })
 }
 
@@ -27,5 +27,6 @@ Promise.all([tarea1(), tarea2(), tarea3()])
     resultados.forEach(resultado => {
         console.log(resultado)
     })
+    console.log('Accion final ejecutada')
 })
 .catch(error => console.error(error))

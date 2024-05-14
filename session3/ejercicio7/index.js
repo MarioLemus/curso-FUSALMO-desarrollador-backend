@@ -1,25 +1,25 @@
-function seleccionarCategoriaVehiculo(readlineIns) {
+function seleccionarCategoriaVehiculo(readlineIns, menu) {
     readlineIns.question("Digite la categoria del vehiculo: ", (categoria) => {
         let tipovehiculo = ""
-        switch(categoria) {
-            case 'Moto':
+        switch(categoria.toLowerCase()) {
+            case 'moto':
                 tipovehiculo = "Motocicleta"
                 break
-            case 'Auto':
+            case 'auto':
                 tipovehiculo = 'Automovil'
                 break
-            case 'Camion':
+            case 'camion':
                 tipovehiculo = 'Super camion'
                 break
-            case 'Bicicleta':
+            case 'bicicleta':
                 tipovehiculo = 'Super Bicicleta'
                 break
             default:
                 tipovehiculo = "La categoria digitada no existe"
                 break
         }
-        console.log(tipovehiculo)
-        readlineIns.close()
+        console.log(tipovehiculo + '\n')
+        menu()
     })
 }
 

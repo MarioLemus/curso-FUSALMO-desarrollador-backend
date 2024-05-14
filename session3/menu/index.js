@@ -12,7 +12,6 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
-
 function ejecutarMenu() {
     console.log("Ejercicio (1)");
     console.log("Ejercicio (2)");
@@ -21,43 +20,41 @@ function ejecutarMenu() {
     console.log("Ejercicio (5)");
     console.log("Ejercicio (6)");
     console.log("Ejercicio (7)");
-    console.log("Presione cualquier otra tecla para finalizar");
+    console.log("Presione cualquier otra tecla para finalizar\n");
 
     rl.question("Seleccione un ejercicio: ", (resp) => {
+        console.log('')
         const opcion = parseInt(resp);
-        if (Number.isNaN(opcion)) {
-            return false;
-        }
 
         switch (opcion) {
             case 1:
-                evaluarSignoNumero(rl);
+                evaluarSignoNumero(rl, ejecutarMenu);
                 break;
             case 2:
-                compararNumeros(rl);
+                compararNumeros(rl, ejecutarMenu);
                 break;
             case 3:
-                factorial(rl);
+                factorial(rl, ejecutarMenu);
                 break;
             case 4:
-                determinarSiEsPar(rl);
+                determinarSiEsPar(rl, ejecutarMenu);
                 break;
             case 5:
-                determinarResultadoDeCombinacion(rl);
+                determinarResultadoDeCombinacion(rl, ejecutarMenu);
                 break;
             case 6:
-                identificarMesPorSuNumero(rl);
+                identificarMesPorSuNumero(rl, ejecutarMenu);
                 break;
             case 7:
-                seleccionarCategoriaVehiculo(rl);
+                seleccionarCategoriaVehiculo(rl, ejecutarMenu);
                 break;
             default:
-                return false;
+                console.log("Gracias por participar, ¡hasta la proxima!")
+                rl.close()
+                break;
         }
     });
-    return true
 }
 
 ejecutarMenu()
 
-module.exports = ejecutarMenu

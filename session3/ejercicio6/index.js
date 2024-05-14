@@ -1,4 +1,4 @@
-function identificarMesPorSuNumero(readlineIns) {
+function identificarMesPorSuNumero(readlineIns, menu) {
     readlineIns.question("Ingrese el numero de mes: ", (numeroMes) => {
         let nombreDeMes = ""
         switch(parseInt(numeroMes)) {
@@ -41,8 +41,8 @@ function identificarMesPorSuNumero(readlineIns) {
             default:
                 nombreDeMes = "El numero ingresado es invalido"
         }
-        console.log(nombreDeMes) 
-        readlineIns.close()
+        console.log(nombreDeMes + '\n') 
+        menu()
     })
 }
 

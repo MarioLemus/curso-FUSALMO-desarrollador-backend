@@ -15,4 +15,4 @@ function evaluarSignoNumero(readlineIns, menu) {
     })
 }
 
-module.exports = evaluarSignoNumero
+module.exports = {evaluarSignoNumero}

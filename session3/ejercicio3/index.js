@@ -1,13 +1,17 @@
-function factorial(readlineIns, menu) {
+function calcFactorial(n) {
+    let resultado = 1
+    for (let i = 1; i <= parseFloat(n); i++) {
+        resultado *= i
+    }
+    return resultado
+}
+
+function obtenerFactorial(readlineIns, menu) {
     readlineIns.question("Digite el numero a realizar el factorial: ", (n1) => {
-        let resultado = 1
-        for (let i = 1; i <= parseFloat(n1); i++) {
-            resultado *= i
-        }
-        console.log(resultado + '\n')
+        console.log(calcFactorial(n1) + '\n')
         menu()
     })
 }
 
 
-module.exports = factorial
+module.exports = {obtenerFactorial}

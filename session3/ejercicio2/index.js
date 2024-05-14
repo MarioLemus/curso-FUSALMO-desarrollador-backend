@@ -20,4 +20,4 @@ function compararNumeros(readlineIns, menu) {
 }
 
 
-module.exports = compararNumeros
+module.exports = {compararNumeros}

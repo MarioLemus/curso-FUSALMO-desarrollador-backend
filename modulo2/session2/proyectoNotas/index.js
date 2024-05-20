@@ -1,8 +1,5 @@
-import yargs from 'yargs'
-import { hideBin } from 'yargs/helpers'
 import {agregarNota, eliminarNota, leerNota, listarNotas, editarNota} from './utiles/notas.js' 
 import readline from 'readline'
-import { argv } from 'process';
 import chalk from 'chalk';
  
 const rl = readline.createInterface({

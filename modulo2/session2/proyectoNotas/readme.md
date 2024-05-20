@@ -1,5 +1,5 @@
 # Participantes
 
-- Mario Alberto Lemus Rodrígiuez
+- Mario Alberto Lemus Rodríguez
 - Julio Armando Quintanilla Acosta
 - Bryan Enrique Padilla Rosa

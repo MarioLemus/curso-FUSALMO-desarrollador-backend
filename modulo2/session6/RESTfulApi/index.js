@@ -1,8 +1,11 @@
 const express = require('express')
+const cors = require('cors')
+
 const app = express()
-const PORT = 3000
+const PORT = 4000
 let tasks = []
 
+app.use(cors())
 app.use(express.json())
 
 app.get('/tasks', (req, res) => {
@@ -39,6 +42,23 @@ app.put('/tasks/:id', (req, res) => {
     } else {
         res.status(404).send("No se actualizo la tarea")
     }
+})
+
+app.patch('/tasks/:id', (req, res) => {
+    const taskId = parseInt(req.params.id)
+    const task = tasks.find(t=>t.id === taskId)
+    if (task) {
+        if (req.body.title !== undefined) {
+            task.title = req.body.title
+        }
+        if (req.body.completed !== undefined) {
+            task.completed = req.body.completed
+        }
+        res.json(task)
+    } else {
+        res.status(404).send('No se encontro la tarea')
+    }
+
 })
 
 app.delete('/tasks/:id', (req, res) => {

@@ -1,0 +1,59 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>app del clima</title>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet">
+    <style>
+        body { margin: 0; padding: 0; font-family: Arial, sans-serif; }
+        #mapa { position: absolute; top: 0; bottom: 0; width: 100%; }
+        #clima { position: absolute; top: 10px; left: 10px; background: white; padding: 10px; z-index: 1; }
+      </style>
+</head>
+<body>
+    <div id="clima">
+        <input type="text" id="input-ubicacion" placeholder="Ingrese la ubicacion">
+        <button onclick="obtenerClima()">Obtener el clima</button>
+        <div id="info-clima"></div>
+    </div>
+    <div id="mapa"></div>
+    
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js'></script>
+
+    <script>
+        mapboxgl.accessToken='pk.eyJ1IjoiY29uZmV0aWNsaSIsImEiOiJjbHd0bnl4am0wNjV1MnFwb3llYWtxOWc3In0.0QaEME-AK9cumnkBVF5V9w'
+        let mapa = new mapboxgl.Map({
+            container: 'mapa',
+            style: 'mapbox://style/mapbox/streets-v11',
+            center: [-88.8965, 13.7941],
+            zoom: 10
+        })
+
+        function obtenerClima() {
+            var ubicacion = document.getElementById('input-ubicacion').value
+            axios.post('/clima', {ubicacion: ubicacion})
+            .then(function(res) {
+                var clima = res.data
+                document.getElementById('info-clima').innerHTML= `
+                    <p>Temperatura: ${clima.temp}°C</p>
+                    <p>Sensacion termica: ${clima.feels_like}°C</p>
+                    <p>Temp minima: ${clima.temp_min}°C</p>
+                    <p>Tem maxima: ${clima.temp_max}°C</p>
+                    <p>Clima: ${clima.weather}°C</p>
+                `;
+                mapa.flyTo({
+                    center: [clima.longitud, clima.latitud],
+                    zoom:14
+                })
+                new mapboxgl.Marker()
+                .setLnLat([clima.longitud, clima.latitud])
+                .addTo(mapa)
+            })
+            .catch(function(e) {
+                console.log('Error en los datos', e)
+            })
+        }
+    </script>
+</body>
+</html>

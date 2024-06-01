@@ -1,0 +1,22 @@
+[
+  {
+    "address": "San Salvador, Ilopango, jardines de san bartolo",
+    "coordinates": [
+      -89.1047911,
+      13.7080988
+    ],
+    "placeName": "Jardines",
+    "review": "Antes era un cafetal",
+    "manager": "Mario Lemus"
+  },
+  {
+    "address": "San Salvador, Tonacatepeque",
+    "coordinates": [
+      -89.11769,
+      13.780208
+    ],
+    "placeName": "Tonaca",
+    "review": "TIene un pupusodromo 10/10",
+    "manager": "Mario Lemus"
+  }
+]
